@@ -72,7 +72,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private TextView textAcc,textGyr,textMag,textView;
     private EditText xCoordinate, yCoordinate;
     private Button button;
-    private int i;
 
     ConnectionFactory factory = new ConnectionFactory();
     private BlockingDeque queue = new LinkedBlockingDeque();
@@ -92,10 +91,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     //mac addresses of access points in the ground floor front wing of AB3
     String[] macList = {
-            "44:31:92:AF:A4:A0",
-            "44:31:92:B0:16:C0",
-            "44:31:92:B0:10:80",
-            "44:31:92:9A:44:C0",
+            "44:31:92:AF:A4:B0",
+            "44:31:92:B0:16:D0",
+            "44:31:92:B0:10:90",
+            "44:31:92:9A:44:D0",
     };
 
     //co ordinates of access points in the ground floor front wing of AB3
@@ -147,9 +146,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         {
             Toast.makeText(this,"Please TURN ON location service to get data!",Toast.LENGTH_SHORT).show();
         }
-
-
-
         //define the sensor manager and the corresponding sensor variables
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         accSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
